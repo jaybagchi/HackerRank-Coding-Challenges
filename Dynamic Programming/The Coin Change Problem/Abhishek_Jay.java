@@ -18,12 +18,12 @@ public class Solution{
 		System.out.print(numWays(coinVals, n));
 	}
 	public static int numWays(int[] coinVals, int n){
-		int[] numVals = new int[n+1];
+		long[] numVals = new long[(int)n+1];
 		numVals[0] = 1;
-		for(int a: coinVals){
-			for(int j = a; j< numVals.length; j++)
-				numVals[j] = numVals[j] + numVals[j - a];
+		for(long a: c){
+			for(long j = a; j< numVals.length; j++)
+				numVals[(int)j] = numVals[(int)j] + numVals[(int)(j - a)];
 		}
-		return numVals[n];
+		return numVals[(int)n];
 	}
 }
